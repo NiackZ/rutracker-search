@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         rutracker search
 // @namespace    rutracker helpers
-// @version      0.5
+// @version      0.6
 // @description  Поиск по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
@@ -41,6 +41,11 @@
         {
             name: 'AniDB',
             url: 'https://anidb.net/search/anime/?adb.search=%s',
+            encode: true
+        },
+        {
+            name: 'MAL',
+            url: 'https://myanimelist.net/search/all?q=%s',
             encode: true
         },
         {
