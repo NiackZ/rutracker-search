@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         rutracker anime search
+// @name         rutracker search
 // @namespace    rutracker helpers
 // @version      0.4
-// @description  Поиск аниме по названию из заголовка
+// @description  Поиск по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
 // @downloadURL  https://github.com/NiackZ/rutracker-search/raw/master/searcher.user.js
