@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RTO mod extended search
 // @namespace    rutracker helpers
-// @version      0.1
+// @version      0.2
 // @description  Поиск аниме по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
@@ -26,11 +26,13 @@
     const SEARCHERS = [
         {
             name: 'По разделу',
-            url: 'https://rutracker.org/forum/tracker.php?f=1105,1106,1386,1387,1389,1390,1391,1642,2484,2491,2544,404,599,809,893&nm=%s'
+            url: 'https://rutracker.org/forum/tracker.php?f=1105,1106,1386,1387,1389,1390,1391,1642,2484,2491,2544,404,599,809,893&nm=%s',
+            encode: true
         },
         {
             name: 'Shikimori',
-            url: 'https://shikimori.me/animes?search=%s'
+            url: 'https://shikimori.me/animes?search=%s',
+            encode: true
         },
         {
             name: 'World-Art',
@@ -38,7 +40,8 @@
         },
         {
             name: 'AniDB',
-            url: 'https://anidb.net/search/anime/?adb.search=%s'
+            url: 'https://anidb.net/search/anime/?adb.search=%s',
+            encode: true
         },
     ]
     const NAMES = [];
@@ -81,7 +84,9 @@
                 SEARCHERS.forEach((searcher, index) => {
                     const a = document.createElement('a');
                     a.textContent = searcher.name;
-                    a.href = searcher.url.replace('%s', name);
+                    a.href = searcher.encode
+                        ? encodeURI(searcher.url.replace('%s', name))
+                        : searcher.url.replace('%s', name)
                     a.target = '_blank';
 
                     span.appendChild(a);
