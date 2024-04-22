@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         rutracker search
 // @namespace    rutracker helpers
-// @version      0.7
+// @version      0.8
 // @description  Поиск по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
@@ -47,7 +47,8 @@
         {
             name: 'MAL',
             url: 'https://myanimelist.net/search/all?q=%s',
-            encode: true
+            encode: true,
+            maxLen: 100
         },
         {
             name: 'КиноПоиск',
