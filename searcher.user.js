@@ -27,7 +27,8 @@
         {
             name: 'По разделу',
             url: 'https://rutracker.org/forum/tracker.php?f=1105,1106,1386,1387,1389,1390,1391,1642,2484,2491,2544,404,599,809,893&nm=%s',
-            encode: true
+            encode: true,
+            maxLen: 100
         },
         {
             name: 'Shikimori',
@@ -57,7 +58,7 @@
             name: 'IMDb',
             url: 'https://www.imdb.com/find/?q=%s',
             encode: true
-        },
+        }
     ]
     const NAMES = [];
 
@@ -83,7 +84,7 @@
             headerText = headerText.slice(0, headerText.indexOf("["));
             headerText = headerText.replace(BRACKETS_REGEX, '');
             for(let name of headerText.split('/')) {
-                NAMES.push(name.trim().replace("  ", " "))
+                NAMES.push(name.trim().replaceAll("  ", " "))
             }
         }
         else console.error("Не найден заголовок!")
