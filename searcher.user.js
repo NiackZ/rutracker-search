@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         rutracker search
 // @namespace    rutracker helpers
-// @version      0.4
+// @version      0.5
 // @description  Поиск по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
