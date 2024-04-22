@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         rutracker search
 // @namespace    rutracker helpers
-// @version      0.6
+// @version      0.7
 // @description  Поиск по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
@@ -84,7 +84,10 @@
             headerText = headerText.slice(0, headerText.indexOf("["));
             headerText = headerText.replace(BRACKETS_REGEX, '');
             for(let name of headerText.split('/')) {
-                NAMES.push(name.trim().replaceAll("  ", " "))
+                NAMES.push(name
+                    .trim()
+                    .replaceAll("  ", " ")
+                    .replaceAll(" ,",","))
             }
         }
         else console.error("Не найден заголовок!")
@@ -100,9 +103,14 @@
                 SEARCHERS.forEach((searcher, index) => {
                     const a = document.createElement('a');
                     a.textContent = searcher.name;
+                    let maxName = name;
+                    if (searcher.maxLen) {
+                        maxName = name.slice(0, searcher.maxLen);
+                        maxName = maxName.slice(0, maxName.lastIndexOf(" ") + 1);
+                    }
                     a.href = searcher.encode
-                        ? encodeURI(searcher.url.replace('%s', name))
-                        : searcher.url.replace('%s', name)
+                        ? encodeURI(searcher.url.replace('%s', maxName))
+                        : searcher.url.replace('%s', maxName)
                     a.target = '_blank';
 
                     span.appendChild(a);
