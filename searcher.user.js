@@ -86,7 +86,7 @@
 
                     span.appendChild(a);
                     if (index < SEARCHERS.length - 1) {
-                        span.appendChild(document.createTextNode(' '));
+                        span.appendChild(document.createTextNode(' | '));
                     }
                 });
                 customDiv.appendChild(span)
