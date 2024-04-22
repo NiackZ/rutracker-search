@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         RTO mod extended search
+// @name         rutracker anime search
 // @namespace    rutracker helpers
-// @version      0.2
+// @version      0.3
 // @description  Поиск аниме по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
