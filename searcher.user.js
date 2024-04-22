@@ -83,7 +83,7 @@
             headerText = headerText.slice(0, headerText.indexOf("["));
             headerText = headerText.replace(BRACKETS_REGEX, '');
             for(let name of headerText.split('/')) {
-                NAMES.push(name.trim())
+                NAMES.push(name.trim().replace("  ", " "))
             }
         }
         else console.error("Не найден заголовок!")
