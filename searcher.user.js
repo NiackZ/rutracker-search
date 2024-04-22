@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         rutracker anime search
 // @namespace    rutracker helpers
-// @version      0.3
+// @version      0.4
 // @description  Поиск аниме по названию из заголовка
 // @author       NiackZ
 // @homepage     https://github.com/NiackZ/rutracker-search
@@ -41,6 +41,16 @@
         {
             name: 'AniDB',
             url: 'https://anidb.net/search/anime/?adb.search=%s',
+            encode: true
+        },
+        {
+            name: 'КиноПоиск',
+            url: 'https://www.kinopoisk.ru/index.php?kp_query=%s',
+            encode: true
+        },
+        {
+            name: 'IMDb',
+            url: 'https://www.imdb.com/find/?q=%s',
             encode: true
         },
     ]
